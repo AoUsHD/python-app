@@ -1,14 +1,20 @@
 pipeline {
-    agent any 
+    agent any
+
     stages {
-        stage('Build') { 
+        stage('Build') {
             steps {
                 sh 'python app.py' // Running the app
             }
         }
+
         stage('Test') {
             steps {
-                sh 'python -m unittest discover' // Running the tests
+                sh '''
+                    set +x; 
+                    echo "Starting Unit Tests..."
+                    python -m unittest discover
+                '''
             }
         }
     }
