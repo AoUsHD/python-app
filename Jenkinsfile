@@ -3,12 +3,14 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'python app.py' // Running the app
+                echo 'Running the app'
+                sh 'python app.py'
             }
         }
         stage('Test') {
             steps {
-                sh 'python -m unittest discover' // Running the tests
+                echo 'Running unit tests'
+                sh 'python -m unittest discover'
             }
         }
     }
