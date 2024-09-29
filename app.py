@@ -1,2 +1,2 @@
 def main_function():
-    print("Hello from the main function")
+    return "Hello from the main function"
