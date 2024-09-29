@@ -11,11 +11,10 @@ pipeline {
                 sh 'python app.py'
             }
         }
-        stage('Run Tests') {   // This is the new stage
+        stage('Run Tests') {
             steps {
                 sh 'python -m unittest discover'
             }
         }
     }
 }
-

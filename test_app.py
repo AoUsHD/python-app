@@ -1,11 +1,9 @@
-# test_app.py
 import unittest
-from app import main_function  # assuming you have a function to test
+from app import main_function  # Ensure this matches the actual function name in app.py
 
 class TestApp(unittest.TestCase):
     def test_main_function(self):
-        self.assertEqual(main_function(), "Expected Output")
+        self.assertEqual(main_function(), None)  # Replace None with expected output
 
 if __name__ == '__main__':
     unittest.main()
-

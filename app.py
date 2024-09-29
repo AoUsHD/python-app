@@ -1,6 +1,2 @@
-# app.py
-def add(a, b):
-    return a + b
-
-if __name__ == "__main__":
-    print(add(2, 3))  # Test: it should print 5
+def main_function():
+    print("Hello from the main function")
