@@ -1,17 +1,12 @@
 pipeline {
     agent any
     stages {
-        stage('Clone Repository') {
+        stage('Build') {
             steps {
-                git 'https://github.com/AoUsHD/python-app.git'
+                sh 'python app.py' // or whatever your app does
             }
         }
-        stage('Run Python Script') {
-            steps {
-                sh 'python app.py'
-            }
-        }
-        stage('Run Tests') {
+        stage('Test') {
             steps {
                 sh 'python -m unittest discover'
             }
