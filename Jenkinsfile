@@ -1,20 +1,21 @@
 pipeline {
     agent any
-
     stages {
         stage('Build') {
             steps {
                 sh 'python app.py' // Running the app
             }
         }
-
         stage('Test') {
             steps {
-                sh '''
-                    set +x; 
-                    echo "Starting Unit Tests..."
-                    python -m unittest discover
-                '''
+                sh 'python -m unittest discover' // Running the tests
+            }
+        }
+        stage('Deploy') {
+            steps {
+                // Deployment steps, assuming a Docker-based app
+                sh 'docker build -t myapp:latest .' // Build Docker image
+                sh 'docker run -d -p 5000:5000 myapp:latest' // Run the app in a container
             }
         }
     }
